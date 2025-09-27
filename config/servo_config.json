@@ -1,0 +1,130 @@
+{
+  "servo_mapping": {
+    "0": {
+      "name": "Thumb CMC Opposition",
+      "description": "Thumb side-to-side movement",
+      "gpio_pin": 12,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 15,
+      "joint_type": "CMC"
+    },
+    "1": {
+      "name": "Thumb MCP Flexion",
+      "description": "Thumb main knuckle bend",
+      "gpio_pin": 13,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "joint_type": "MCP"
+    },
+    "2": {
+      "name": "Thumb IP Flexion",
+      "description": "Thumb tip bend",
+      "gpio_pin": 16,
+      "min_angle": 0,
+      "max_angle": 60,
+      "default_position": 0,
+      "joint_type": "IP"
+    },
+    "3": {
+      "name": "Index MCP Flexion",
+      "description": "Index finger main knuckle",
+      "gpio_pin": 19,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "joint_type": "MCP"
+    },
+    "4": {
+      "name": "Index PIP Flexion",
+      "description": "Index finger middle joint",
+      "gpio_pin": 20,
+      "min_angle": 0,
+      "max_angle": 100,
+      "default_position": 0,
+      "joint_type": "PIP"
+    },
+    "5": {
+      "name": "Index DIP Flexion",
+      "description": "Index finger tip joint",
+      "gpio_pin": 21,
+      "min_angle": 0,
+      "max_angle": 80,
+      "default_position": 0,
+      "joint_type": "DIP"
+    },
+    "6": {
+      "name": "Middle MCP Flexion",
+      "description": "Middle finger main knuckle",
+      "gpio_pin": 26,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "joint_type": "MCP"
+    },
+    "7": {
+      "name": "Middle PIP+DIP Flexion",
+      "description": "Middle finger joints (coupled)",
+      "gpio_pin": 18,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "joint_type": "PIP_DIP"
+    }
+  },
+
+  "future_servos": {
+    "8": {
+      "name": "Ring MCP Flexion",
+      "description": "Ring finger main knuckle",
+      "controller": "PCA9685",
+      "channel": 8,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0
+    },
+    "9": {
+      "name": "Ring PIP+DIP Flexion",
+      "description": "Ring finger joints (coupled)",
+      "controller": "PCA9685",
+      "channel": 9,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0
+    },
+    "10": {
+      "name": "Pinky MCP Flexion",
+      "description": "Pinky finger main knuckle",
+      "controller": "PCA9685",
+      "channel": 10,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0
+    },
+    "11": {
+      "name": "Wrist Flexion/Extension",
+      "description": "Wrist up/down movement",
+      "controller": "PCA9685",
+      "channel": 11,
+      "min_angle": -30,
+      "max_angle": 60,
+      "default_position": 0
+    }
+  },
+
+  "safety_settings": {
+    "emergency_stop_pin": 3,
+    "max_current_ma": 3000,
+    "update_frequency_hz": 50,
+    "position_tolerance_degrees": 2,
+    "movement_timeout_seconds": 5
+  },
+
+  "calibration": {
+    "pulse_width_min_us": 1000,
+    "pulse_width_max_us": 2000,
+    "servo_deadband_degrees": 1,
+    "position_feedback_enabled": false
+  }
+}

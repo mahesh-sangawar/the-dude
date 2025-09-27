@@ -1,0 +1,159 @@
+{
+  "hand_setup": "5_servo_basic",
+  "description": "One servo per finger for simple but effective hand control",
+
+  "servo_mapping": {
+    "0": {
+      "name": "Thumb",
+      "description": "Thumb opposition and flexion combined",
+      "gpio_pin": 12,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 15,
+      "finger": "thumb",
+      "control_type": "combined_movement"
+    },
+    "1": {
+      "name": "Index Finger",
+      "description": "Index finger curl (MCP+PIP combined)",
+      "gpio_pin": 13,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "finger": "index",
+      "control_type": "curl"
+    },
+    "2": {
+      "name": "Middle Finger",
+      "description": "Middle finger curl (MCP+PIP combined)",
+      "gpio_pin": 16,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "finger": "middle",
+      "control_type": "curl"
+    },
+    "3": {
+      "name": "Ring Finger",
+      "description": "Ring finger curl (MCP+PIP combined)",
+      "gpio_pin": 19,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "finger": "ring",
+      "control_type": "curl"
+    },
+    "4": {
+      "name": "Pinky Finger",
+      "description": "Pinky finger curl (MCP+PIP combined)",
+      "gpio_pin": 20,
+      "min_angle": 0,
+      "max_angle": 90,
+      "default_position": 0,
+      "finger": "pinky",
+      "control_type": "curl"
+    }
+  },
+
+  "gestures": {
+    "open_hand": {
+      "description": "Fully open relaxed hand",
+      "positions": [15, 0, 0, 0, 0],
+      "duration_seconds": 1.0
+    },
+    "closed_fist": {
+      "description": "Tight closed fist",
+      "positions": [75, 90, 90, 90, 90],
+      "duration_seconds": 1.5
+    },
+    "pointing": {
+      "description": "Index finger pointing",
+      "positions": [45, 0, 90, 90, 90],
+      "duration_seconds": 1.0
+    },
+    "peace_sign": {
+      "description": "Peace/victory sign",
+      "positions": [75, 0, 0, 90, 90],
+      "duration_seconds": 1.0
+    },
+    "thumbs_up": {
+      "description": "Approval gesture",
+      "positions": [0, 90, 90, 90, 90],
+      "duration_seconds": 1.0
+    },
+    "rock_horns": {
+      "description": "Rock and roll sign",
+      "positions": [75, 0, 90, 90, 0],
+      "duration_seconds": 1.0
+    },
+    "ok_sign": {
+      "description": "OK gesture (approximate)",
+      "positions": [60, 60, 0, 0, 0],
+      "duration_seconds": 1.0
+    },
+    "gun_gesture": {
+      "description": "Finger gun pointing",
+      "positions": [0, 0, 90, 90, 90],
+      "duration_seconds": 1.0
+    }
+  },
+
+  "sequences": {
+    "wave": {
+      "description": "Waving motion",
+      "steps": [
+        {"positions": [15, 0, 0, 0, 0], "duration": 0.5},
+        {"positions": [15, 30, 30, 30, 30], "duration": 0.3},
+        {"positions": [15, 0, 0, 0, 0], "duration": 0.3},
+        {"positions": [15, 30, 30, 30, 30], "duration": 0.3},
+        {"positions": [15, 0, 0, 0, 0], "duration": 0.5}
+      ]
+    },
+    "finger_count": {
+      "description": "Count from 1 to 5",
+      "steps": [
+        {"positions": [75, 0, 90, 90, 90], "duration": 1.0},
+        {"positions": [75, 0, 0, 90, 90], "duration": 1.0},
+        {"positions": [75, 0, 0, 0, 90], "duration": 1.0},
+        {"positions": [75, 0, 0, 0, 0], "duration": 1.0},
+        {"positions": [0, 0, 0, 0, 0], "duration": 1.0}
+      ]
+    }
+  },
+
+  "cable_routing": {
+    "thumb": {
+      "path": "Direct from servo to thumb CMC joint",
+      "cable_length_mm": 120,
+      "guide_points": 2
+    },
+    "index": {
+      "path": "Servo to index MCP, coupled to PIP",
+      "cable_length_mm": 150,
+      "guide_points": 3
+    },
+    "middle": {
+      "path": "Servo to middle MCP, coupled to PIP",
+      "cable_length_mm": 140,
+      "guide_points": 3
+    },
+    "ring": {
+      "path": "Servo to ring MCP, coupled to PIP",
+      "cable_length_mm": 135,
+      "guide_points": 3
+    },
+    "pinky": {
+      "path": "Servo to pinky MCP, coupled to PIP",
+      "cable_length_mm": 125,
+      "guide_points": 3
+    }
+  },
+
+  "power_requirements": {
+    "servo_count": 5,
+    "idle_current_ma": 50,
+    "active_current_ma": 500,
+    "peak_current_ma": 1250,
+    "recommended_supply": "5V 3A"
+  }
+}
